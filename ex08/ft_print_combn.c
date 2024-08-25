@@ -6,11 +6,12 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 15:14:39 by gabastos          #+#    #+#             */
-/*   Updated: 2024/08/25 16:59:57 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/08/25 17:12:34 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#define MAX_COMBINATION_SIZE 9
 
 void	print_combination(int n, char *combination, int is_last)
 {
@@ -21,8 +22,8 @@ void	print_combination(int n, char *combination, int is_last)
 	}
 }
 
-
-void	generate_combinations(int n, int start, int depth, char *combination){
+void	generate_combinations(int n, int start, int depth, char *combination)
+{
 	int	i;
 
 	i = start;
@@ -39,12 +40,11 @@ void	generate_combinations(int n, int start, int depth, char *combination){
 	}
 }
 
-
 void	ft_print_combn(int n)
 {
-	char	combination[n];
+	char	combination[MAX_COMBINATION_SIZE];
 
-	if (n <= 0 || n >= 10)
+	if (n <= 0 || n > MAX_COMBINATION_SIZE)
 	{
 		return ;
 	}
